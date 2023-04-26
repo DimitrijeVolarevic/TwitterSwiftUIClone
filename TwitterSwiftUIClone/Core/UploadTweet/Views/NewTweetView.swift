@@ -10,12 +10,13 @@ import SwiftUI
 struct NewTweetView: View {
     
     @State private var caption = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
             HStack {
                 Button {
-                    print("Dismiss")
+                    dismiss()
                 } label: {
                     Text("Cancel")
                         .foregroundColor(Color(.systemBlue))
@@ -44,6 +45,7 @@ struct NewTweetView: View {
                     .frame(width: 64, height: 64)
                 
                 TextArea("What's happening", text: $caption)
+                    .padding(5)
                 
                     
             }
