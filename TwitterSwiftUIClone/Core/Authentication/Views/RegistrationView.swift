@@ -13,6 +13,7 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var fullName = ""
     @State private var username = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -31,7 +32,7 @@ struct RegistrationView: View {
             .padding(.top, 44)
             
             Button {
-                print("Sign in here..")
+                viewModel.register(withEmail: email, password: password, fullname: fullName, username: username)
             } label: {
                 Text("Sign In")
                     .font(.headline)
@@ -59,7 +60,7 @@ struct RegistrationView: View {
                     
                 }
             }
-            .padding(.bottom, 20)
+            .padding(.bottom, 40)
             .foregroundColor(Color(.systemBlue))
         }
         .ignoresSafeArea()
