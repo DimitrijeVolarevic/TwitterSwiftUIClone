@@ -15,12 +15,12 @@ struct LogInView: View {
     
     var body: some View {
         VStack {
-            AuthenticationHeader(title1: "Hello", title2: "Welcome Back")
+            AuthenticationHeader(title1: "Hello.", title2: "Welcome Back.")
             
             VStack(spacing: 40) {
                 CustomInputField(imageName: "envelope", placeholderText: "Email", text: $email)
                 
-                CustomInputField(imageName: "lock", placeholderText: "Password", text: $password)
+                CustomInputField(imageName: "lock", placeholderText: "Password", text: $password, isSecureField: true)
             }
             .padding(.horizontal, 32)
             .padding(.top, 44)

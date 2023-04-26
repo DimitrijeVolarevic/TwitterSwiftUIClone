@@ -12,6 +12,7 @@ struct CustomInputField: View {
     let imageName: String
     let placeholderText: String
     @Binding var text: String
+    var isSecureField: Bool? = false
     
     var body: some View {
         VStack {
@@ -22,8 +23,11 @@ struct CustomInputField: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color(.darkGray))
                 
-                TextField(placeholderText, text: $text)
-                
+                if isSecureField ?? false {
+                    SecureField(placeholderText, text: $text)
+                } else {
+                    TextField(placeholderText, text: $text)
+                }
             }
             Divider()
                 .background(Color(.darkGray))
@@ -33,6 +37,9 @@ struct CustomInputField: View {
 
 struct CustomInputField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputField(imageName: "envelope", placeholderText: "Email", text: .constant(""))
+        CustomInputField(imageName: "envelope",
+                         placeholderText: "Email",
+                         text: .constant(""),
+                         isSecureField: false)
     }
 }
