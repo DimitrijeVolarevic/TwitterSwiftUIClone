@@ -33,6 +33,9 @@
 		B7AD63FF29F6F48F0058A59E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD63FE29F6F48F0058A59E /* ContentView.swift */; };
 		B7AD640129F6F4900058A59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AD640029F6F4900058A59E /* Assets.xcassets */; };
 		B7AD640429F6F4900058A59E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AD640329F6F4900058A59E /* Preview Assets.xcassets */; };
+		B7BB0C6029FA84A100084A9C /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C5F29FA84A100084A9C /* ProfilePhotoSelectorView.swift */; };
+		B7BB0C6329FA94A200084A9C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C6229FA94A200084A9C /* ImagePicker.swift */; };
+		B7BB0C6529FAA2F800084A9C /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C6429FAA2F800084A9C /* ImageUploader.swift */; };
 		B7FCB27829F801EB008E85B0 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCB27729F801EB008E85B0 /* NewTweetView.swift */; };
 		B7FCB27A29F80456008E85B0 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCB27929F80456008E85B0 /* TextArea.swift */; };
 		B7FE190729F712A1003E36B2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE190629F712A1003E36B2 /* ProfileView.swift */; };
@@ -63,6 +66,9 @@
 		B7AD63FE29F6F48F0058A59E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7AD640029F6F4900058A59E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7AD640329F6F4900058A59E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B7BB0C5F29FA84A100084A9C /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
+		B7BB0C6229FA94A200084A9C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B7BB0C6429FAA2F800084A9C /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		B7FCB27729F801EB008E85B0 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		B7FCB27929F80456008E85B0 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		B7FE190629F712A1003E36B2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			children = (
 				B71DAD1529F9201A00E83E80 /* LogInView.swift */,
 				B71DAD1729F9203700E83E80 /* RegistrationView.swift */,
+				B7BB0C5F29FA84A100084A9C /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		B72EB99B29F706FA00822595 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B7BB0C6429FAA2F800084A9C /* ImageUploader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 		B7AD63FB29F6F48F0058A59E /* TwitterSwiftUIClone */ = {
 			isa = PBXGroup;
 			children = (
+				B7BB0C6129FA945800084A9C /* Utilities */,
 				B72EB99B29F706FA00822595 /* Service */,
 				B72EB99A29F706F700822595 /* Core */,
 				B72EB99929F706F300822595 /* Model */,
@@ -331,6 +340,14 @@
 				B7AD640329F6F4900058A59E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B7BB0C6129FA945800084A9C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B7BB0C6229FA94A200084A9C /* ImagePicker.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B7FCB27429F801B4008E85B0 /* UploadTweet */ = {
@@ -455,12 +472,15 @@
 			files = (
 				B72EB9B129F7113600822595 /* MessagesView.swift in Sources */,
 				B7FE190729F712A1003E36B2 /* ProfileView.swift in Sources */,
+				B7BB0C6329FA94A200084A9C /* ImagePicker.swift in Sources */,
 				B7AD63FF29F6F48F0058A59E /* ContentView.swift in Sources */,
 				B72EB9A429F708F700822595 /* TweetRowView.swift in Sources */,
+				B7BB0C6529FAA2F800084A9C /* ImageUploader.swift in Sources */,
 				B71DAD1C29F9373400E83E80 /* CustomInputField.swift in Sources */,
 				B7FE190929F719E8003E36B2 /* TweetFilterViewModel.swift in Sources */,
 				B72EB9A129F707BC00822595 /* FeedView.swift in Sources */,
 				B71DAD1629F9201A00E83E80 /* LogInView.swift in Sources */,
+				B7BB0C6029FA84A100084A9C /* ProfilePhotoSelectorView.swift in Sources */,
 				B7A4FAFF29F7E6A000C6A6DC /* SideMenuView.swift in Sources */,
 				B7AD63FD29F6F48F0058A59E /* TwitterSwiftUICloneApp.swift in Sources */,
 				B72EB9AD29F7100B00822595 /* ExploreView.swift in Sources */,

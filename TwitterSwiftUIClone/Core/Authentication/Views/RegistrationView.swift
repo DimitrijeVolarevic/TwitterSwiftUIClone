@@ -14,9 +14,15 @@ struct RegistrationView: View {
     @State private var fullName = ""
     @State private var username = ""
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var didAuthenticate = false
     
     var body: some View {
         VStack {
+            
+            NavigationLink(destination: ProfilePhotoSelectorView(),
+                           isActive: $didAuthenticate,
+                           label: { })
+            
             AuthenticationHeader(title1: "Get Started.", title2: "Create your account")
             
             VStack(spacing: 40) {
@@ -64,6 +70,11 @@ struct RegistrationView: View {
             .foregroundColor(Color(.systemBlue))
         }
         .ignoresSafeArea()
+        .onAppear {
+            viewModel.didAuthenticateUser = {
+                self.didAuthenticate = true
+            }
+        }
     }
 }
 
