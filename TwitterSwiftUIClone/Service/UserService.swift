@@ -23,4 +23,20 @@ struct UserService {
             }
     }
     
+    func fetchUsers(completion: @escaping([User]) -> Void) {
+        
+        Firestore.firestore().collection("users")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching users: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let documents = snapshot?.documents else { return }
+                let users = documents.compactMap({ try? $0.data(as: User.self) })
+                
+                completion(users)
+            }
+    }
+    
 }
