@@ -13,12 +13,14 @@ class AuthViewModel: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
     var didAuthenticateUser: (() -> Void)?
+    @Published var currentUser: User?
     private var tempUserSession: FirebaseAuth.User?
+    
+    private let service = UserService()
     
     init() {
         self.userSession = Auth.auth().currentUser
-        
-        print("DEBUG: User session is \(self.userSession?.uid)")
+        self.fetchUser()
     }
     
     func logIn(withEmail email: String, password: String) {
@@ -81,6 +83,15 @@ class AuthViewModel: ObservableObject {
                         self.userSession = self.tempUserSession
                     }
                 }
+        }
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        
+        // set this published currentUser property to the user that we fetch
+        service.fetchUser(withUid: uid) { user in
+            self.currentUser = user
         }
     }
     

@@ -24,11 +24,14 @@ struct ImageUploader {
                 print("Failed to upload image with error: \(error.localizedDescription)")
                 return
             }
+            ref.downloadURL { imageUrl, _ in
+                guard let imageUrl = imageUrl?.absoluteString else { return }
+                completion(imageUrl)
+            }
+            
         }
         
-        ref.downloadURL { imageUrl, _ in
-            guard let imageUrl = imageUrl?.absoluteString else { return }
-            completion(imageUrl)
-        }
+        
+        
     }
 }
