@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     
     @State private var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
     @Environment(\.dismiss) var dismiss
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,12 +33,13 @@ struct ProfileView: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User(id: NSUUID().uuidString, username: "dime", fullname: "Dimitrije Volarevic", profileImageUrl: "", email: "dimitrije@gmail.com"))
     }
 }
 
@@ -50,12 +57,15 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 14)
                         .foregroundColor(.white)
-                        .offset(x: 10, y: 3)
+                        .offset(x: 10, y: -17)
                 }
 
-                Circle()
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
                     .frame(width: 72, height: 72)
-                .offset(x: 16, y: 24)
+                    .offset(x: 16, y: 24)
             }
         }
         .frame(height: 100)
@@ -87,7 +97,7 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Dimitrije Volarevic")
+                Text(user.fullname)
                     .font(.title2).bold()
                 
                 Image(systemName: "checkmark.seal.fill")
@@ -95,7 +105,7 @@ extension ProfileView {
                 
             }
             
-            Text("@dime")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             

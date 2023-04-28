@@ -32,7 +32,7 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
-            print("Did log user in..")
+            self.fetchUser()
             
         }
     }
@@ -81,6 +81,7 @@ class AuthViewModel: ObservableObject {
                         print("Error updating document: \(err)")
                     } else {
                         self.userSession = self.tempUserSession
+                        self.fetchUser()
                     }
                 }
         }
