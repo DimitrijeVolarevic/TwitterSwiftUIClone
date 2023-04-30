@@ -34,6 +34,7 @@ struct FeedView: View {
                         NewTweetView()
                     }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .padding(6)
 
             

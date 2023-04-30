@@ -43,6 +43,7 @@
 		B7BB0C6029FA84A100084A9C /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C5F29FA84A100084A9C /* ProfilePhotoSelectorView.swift */; };
 		B7BB0C6329FA94A200084A9C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C6229FA94A200084A9C /* ImagePicker.swift */; };
 		B7BB0C6529FAA2F800084A9C /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB0C6429FAA2F800084A9C /* ImageUploader.swift */; };
+		B7C75D1A29FE5C4A00ED9034 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C75D1929FE5C4A00ED9034 /* ProfileViewModel.swift */; };
 		B7CC358929FC5A6C00E4C289 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC358829FC5A6C00E4C289 /* ExploreViewModel.swift */; };
 		B7FBFB5129FD804700D6DA07 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBFB5029FD804700D6DA07 /* SearchBar.swift */; };
 		B7FCB27829F801EB008E85B0 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCB27729F801EB008E85B0 /* NewTweetView.swift */; };
@@ -84,6 +85,7 @@
 		B7BB0C5F29FA84A100084A9C /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 		B7BB0C6229FA94A200084A9C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B7BB0C6429FAA2F800084A9C /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		B7C75D1929FE5C4A00ED9034 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B7CC358829FC5A6C00E4C289 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		B7FBFB5029FD804700D6DA07 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B7FCB27729F801EB008E85B0 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				B7FE190829F719E8003E36B2 /* TweetFilterViewModel.swift */,
+				B7C75D1929FE5C4A00ED9034 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				B72EB9A729F70EF000822595 /* MainTabView.swift in Sources */,
 				B72EB9AF29F7110800822595 /* NotificationsView.swift in Sources */,
 				B7A4FB0529F7E8D000C6A6DC /* UserStatsView.swift in Sources */,
+				B7C75D1A29FE5C4A00ED9034 /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
