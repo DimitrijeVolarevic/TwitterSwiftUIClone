@@ -76,4 +76,30 @@ struct TweetService {
         
     }
     
+    func checkIfUserLikedTweet(_ tweet: Tweet, completion: @escaping(Bool) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let tweetId = tweet.id else { return }
+        
+        Firestore.firestore().collection("users").document(uid).collection("user-likes").document(tweetId).getDocument { snapshot, _ in
+            guard let snapshot = snapshot else { return }
+            completion(snapshot.exists)
+        }
+    }
+    
+    func unlikeTweet(_ tweet: Tweet, completion: @escaping() -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let tweetId = tweet.id else { return }
+        guard tweet.likes > 0 else { return }
+        
+        let userLikes = Firestore.firestore().collection("users").document(uid).collection("user-likes")
+
+        
+        Firestore.firestore().collection("tweets").document(tweetId)
+            .updateData(["likes": tweet.likes - 1]) { _ in
+                userLikes.document(tweetId).delete { _ in
+                    completion()
+                }
+            }
+    }
+    
 }
